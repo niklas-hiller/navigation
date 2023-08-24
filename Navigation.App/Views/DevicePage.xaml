@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Navigation.App.Views.DevicePage"
+             Title="Devices">
+    <VerticalStackLayout Margin="20"
+                         Spacing="6"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
+        <Frame>
+            <Button Text="Autorisierte Geräte"
+                Clicked="OnButton_Clicked1"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                WidthRequest="250"/>
+        </Frame>
+        <Frame>
+            <Button Text="Registrierte Geräte"
+                Clicked="OnButton_Clicked2" 
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                WidthRequest="250"/>
+        </Frame>
+
+
+    </VerticalStackLayout>
+</ContentPage>

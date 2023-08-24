@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Navigation.App.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Navigation.App"
+    xmlns:views="clr-namespace:Navigation.App.Views"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <ShellContent Title="Live Map"
+                      Icon="map.png"
+                      ContentTemplate="{DataTemplate views:MapPage}" />
+        <ShellContent Title="Insights"
+                      Icon="insight.png"
+                      ContentTemplate="{DataTemplate views:InsightPage}" />
+        <ShellContent Title="Devices"
+                      Icon="device.png"
+                      ContentTemplate="{DataTemplate views:DevicePage}" />
+    </TabBar>
+
+</Shell>

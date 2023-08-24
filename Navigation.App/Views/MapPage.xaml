@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Navigation.App.Views.MapPage"
+             xmlns:viewmodel="clr-namespace:Navigation.App.ViewModels.Sensors"
+             x:DataType="viewmodel:PositionViewModel"
+             Title="Live Map">
+    <ContentPage.BindingContext>
+        <viewmodel:PositionViewModel/>
+    </ContentPage.BindingContext>
+    <Frame>
+        <VerticalStackLayout>
+            <Label Text="Start Longitude: " />
+            <Label Text="{Binding InitialPosition.Longitude}"/>
+            <Label Text="Start Latitude:" />
+            <Label Text="{Binding InitialPosition.Latitude}"/>
+            <Label Text="Start Accuracy (meters): " />
+            <Label Text="{Binding InitialPosition.Accuracy}"/>
+
+            <Label Text="Longitude: " />
+            <Label Text="{Binding CurrentPosition.Longitude}"/>
+            <Label Text="Latitude:" />
+            <Label Text="{Binding CurrentPosition.Latitude}"/>
+            <Label Text="Accuracy (meters): " />
+            <Label Text="{Binding CurrentPosition.Accuracy}"/>
+
+            <Label Text="Distance (meters): " />
+            <Label Text="{Binding Distance}"/>
+        </VerticalStackLayout>
+    </Frame>
+</ContentPage>

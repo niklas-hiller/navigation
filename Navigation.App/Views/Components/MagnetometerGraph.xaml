@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView x:Name="This"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Navigation.App.Views.Components.MagnetometerGraph"
+             xmlns:viewmodel="clr-namespace:Navigation.App.ViewModels.Sensors"
+             x:DataType="viewmodel:MagnetometerViewModel"
+             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui">
+    <ContentView.BindingContext>
+        <viewmodel:MagnetometerViewModel/>
+    </ContentView.BindingContext>
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Text="{Binding Title, Source={x:Reference This}}" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Medium" />
+            <HorizontalStackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="End" VerticalOptions="Center">
+                <Label HorizontalOptions="End" VerticalOptions="Center">Echtzeit</Label>
+                <Switch HorizontalOptions="End" VerticalOptions="Center" IsToggled="True"/>
+            </HorizontalStackLayout>
+                    
+            <lvc:CartesianChart MinimumHeightRequest="250"
+                                MaximumHeightRequest="500"
+                                HeightRequest="250"
+                                Grid.Row="1"
+                                Grid.ColumnSpan="2"
+                                Margin="0"
+                                Series="{Binding Series}"
+                                YAxes="{Binding YAxes}"
+                                DrawMarginFrame="{Binding Frame}"
+                                TooltipPosition="Hidden">
+            </lvc:CartesianChart>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
